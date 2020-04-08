@@ -1,0 +1,28 @@
+#!/bin/sh
+
+[ -f ~/.surf/dmenu ] && {
+	. ~/.surf/dmenu
+} || {
+	echo "# surf-dmenu config
+FONT=\"\"
+NBCOLOR=\"\"
+NFCOLOR=\"\"
+SBCOLOR=\"\"
+SFCOLOR=\"\"" > ~/.surf/dmenu
+}
+
+FONT=${FONT:-monospace:size=10}
+NBCOLOR=${NBCOLOR:-#222222}
+NFCOLOR=${NFCOLOR:-#bbbbbb}
+SBCOLOR=${SBCOLOR:-#005577}
+SFCOLOR=${SFCOLOR:-#eeeeee}
+
+exec dmenu \
+	-fn $FONT \
+	-nb $NBCOLOR \
+	-nf $NFCOLOR \
+	-sb $SBCOLOR \
+	-sf $SFCOLOR \
+	$@
+
+exit 0

@@ -59,6 +59,7 @@ dist: distclean
 install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f surf $(DESTDIR)$(PREFIX)/bin
+	cp -f surf-dmenu $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/surf
 	mkdir -p $(DESTDIR)$(LIBDIR)
 	cp -f libsurf-webext.so $(DESTDIR)$(LIBDIR)
